@@ -1,0 +1,43 @@
+@model Joo_Jeana_HW2.Models.IndividualOrder
+
+@{
+    ViewData["Title"] = "Individual Checkout Page";
+}
+
+<h1>Individual Checkout Page</h1>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="IndividualTotals">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganizationCode" class="control-label"></label>
+                <input asp-for="OrganizationCode" class="form-control" />
+                <span asp-validation-for="OrganizationCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfSweatshirts" class="control-label"></label>
+                <input asp-for="NumberOfSweatshirts" class="form-control" />
+                <span asp-validation-for="NumberOfSweatshirts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfTShirts" class="control-label"></label>
+                <input asp-for="NumberOfTShirts" class="form-control" />
+                <span asp-validation-for="NumberOfTShirts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Home</a>
+</div>
+
