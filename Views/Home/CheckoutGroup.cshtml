@@ -1,0 +1,53 @@
+@model Joo_Jeana_HW2.Models.GroupOrder
+
+@{
+    ViewData["Title"] = "Group Checkout";
+}
+
+<h1>Group Checkout Page</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GroupTotals" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="OrganizationCode" class="control-label"></label>
+                <input asp-for="OrganizationCode" class="form-control" />
+                <span asp-validation-for="OrganizationCode" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check mt-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PreferredCustomer" /> @Html.DisplayNameFor(m => m.PreferredCustomer)
+                </label>
+            </div>
+
+            <div class="form-group mt-2">
+                <label asp-for="SetupFee" class="control-label"></label>
+                <input asp-for="SetupFee" class="form-control" />
+                <span asp-validation-for="SetupFee" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label asp-for="NumberOfSweatshirts" class="control-label"></label>
+                <input asp-for="NumberOfSweatshirts" class="form-control" />
+                <span asp-validation-for="NumberOfSweatshirts" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label asp-for="NumberOfTShirts" class="control-label"></label>
+                <input asp-for="NumberOfTShirts" class="form-control" />
+                <span asp-validation-for="NumberOfTShirts" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index">Back to Home</a>
+</div>
